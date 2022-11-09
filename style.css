@@ -1,0 +1,35 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 960px;
+  height: 960px;
+}
+
+.grid {
+  display: grid;
+  width: 560px;
+  height: 560px;
+  border: solid 1px black;
+  grid-template-columns: repeat(16, 1fr);
+}
+
+.item {
+  background-color: aqua;
+  border: solid 1px black;
+}
+
+
+
+
+
+
+
