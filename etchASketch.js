@@ -1,40 +1,32 @@
-gridSize = 256;
 
-while (gridSize > 0) {
 
-const grid = document.querySelector('.grid');
+document.getElementById('btn').addEventListener('click', createGrid);
 
-const item = document.createElement('div');
-item.classList.add('item');
-  
-grid.appendChild(item);
+function createGrid() {
+  let length = prompt("how wide? ");
+    if (length > 100) {
+      return alert("Please choose a number less than or = 100.");
+    }
 
-//   // completeGrid();
-
-gridSize--;
+    else {
+      let gridSize = Math.pow(length, 2);
+      createDivs(gridSize);
+      createColumns(length);
+    }
 }
 
-// // function completeGrid() {
+function createDivs(gridSize) {
+  while (gridSize > 0) {
+    const grid = document.querySelector('#grid');
+    const item = document.createElement('div');
+    item.classList.add('item'); 
+    grid.appendChild(item);
+    gridSize--;
+  }
+}
 
-// //   // while (columns > 0) {
-// const smallBoxRowsAll = document.querySelectorAll('.smallBoxRows');
+function createColumns(length) {
+  const allSquares = document.querySelector('#grid');
+  allSquares.style.gridTemplateColumns = `repeat(${length}, 1fr)`;
+}
 
-// for (const smallBoxRows of smallBoxRowsAll) {
-//   const smallBoxColumns = document.createElement('div');
-//   smallBoxColumns.classList.add('smallBoxColumns');
-//   smallBoxRows.appendChild(smallBoxColumns);
-// }
-// // const smallBoxColumns = document.createElement('div');
-// // smallBoxColumns.classList.add('smallBoxColumns');
-
-// // smallBoxRows.appendChild(smallBoxColumns);
-// //   // columns--;
-// //   }
-
-// const smallBoxRowsAll = document.querySelectorAll('.smallBoxRows');
-
-// for (const smallBoxRows of smallBoxRowsAll) {
-//   const smallBoxColumns = document.createElement('div');
-//   smallBoxColumns.classList.add('smallBoxRows');
-//   smallBoxRows.appendChild(smallBoxColumns);
-// }
