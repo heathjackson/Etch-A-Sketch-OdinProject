@@ -32,28 +32,32 @@ function hoverRandomColor() {
   });
 }
 
+// function hoverGradientBlack() {
+
+//   let hoverEffects = document.querySelectorAll('.hoverEffect')
+//   let color = 0;
+ 
+//   hoverEffects.forEach(hoverEffect => {
+//     hoverEffect.addEventListener('mouseover', function() {
+//       let alpha = 1;
+//       hoverEffect.style.backgroundColor = `rgba(${color}, ${color}, ${color}, ${alpha})`;
+//     });
+//   });
+// }
 function hoverGradientBlack() {
 
-  let hoverEffects = document.querySelectorAll('.hoverEffect')
-  let color = 0;
- 
+  const hoverEffects = document.querySelectorAll('.hoverEffect')
+  
   hoverEffects.forEach(hoverEffect => {
-    hoverEffect.addEventListener('mouseover', function() {
-      let alpha = 1;
-      hoverEffect.style.backgroundColor = `rgba(${color}, ${color}, ${color}, ${alpha})`;
+    const hvrEffect = hoverEffect;
+    hvrEffect.count = 0;
+    hvrEffect.addEventListener('mouseover', (e) => {
+      console.log(e.target.style.backgroundColor = 'rgb(0, 0, 0)');
+      console.log(e.target.count += 1);
+      console.log(e.target.style.opacity = 0.2 * e.target.count);
     });
   });
 }
-// function hoverGradientBlack() {
-
-//   const hoverEffects = document.querySelectorAll('.hoverEffect')
-  
-//   hoverEffects.forEach(hoverEffect => {
-//     const hvrEffect = hoverEffect;
-//     hvrEffect.addEventListener('mouseover', (e) => {
-//       e.target.style.backgroundColor = 'rgb(0, 0, 0';
-//     });
-//   });
   //   hoverEffect.addEventListener('mouseover', function() {
   //     hoverEffect.style.backgroundColor = `rgb(${color}, ${color}, ${color})`;
   //     color = color * 0.9;
