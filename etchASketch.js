@@ -34,20 +34,32 @@ function hoverRandomColor() {
 
 function hoverGradientBlack() {
 
-  const hoverEffects = document.querySelectorAll('.hoverEffect')
-  
+  let hoverEffects = document.querySelectorAll('.hoverEffect')
+  let color = 0;
+ 
   hoverEffects.forEach(hoverEffect => {
-    const hvrEffect = hoverEffect;
-    hvrEffect.addEventListener('mouseover', (e) => {
-      e.target.style.backgroundColor = 'rgb(0, 0, 0';
+    hoverEffect.addEventListener('mouseover', function() {
+      let alpha = 1;
+      hoverEffect.style.backgroundColor = `rgba(${color}, ${color}, ${color}, ${alpha})`;
     });
   });
+}
+// function hoverGradientBlack() {
+
+//   const hoverEffects = document.querySelectorAll('.hoverEffect')
+  
+//   hoverEffects.forEach(hoverEffect => {
+//     const hvrEffect = hoverEffect;
+//     hvrEffect.addEventListener('mouseover', (e) => {
+//       e.target.style.backgroundColor = 'rgb(0, 0, 0';
+//     });
+//   });
   //   hoverEffect.addEventListener('mouseover', function() {
   //     hoverEffect.style.backgroundColor = `rgb(${color}, ${color}, ${color})`;
   //     color = color * 0.9;
   //   });
   // });
-}
+// }
 
 
 
