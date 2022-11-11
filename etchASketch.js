@@ -1,7 +1,7 @@
 
 
 document.getElementById('btn').addEventListener('click', createGrid);
-// document.getElementById('btn1').addEventListener('click', hoverRandomColor);
+document.getElementById('btn1').addEventListener('click', hoverRandomColor);
 document.getElementById('btn2').addEventListener('click', hoverGradientBlack);
 
 function createGrid() {
@@ -33,35 +33,19 @@ function hoverRandomColor() {
 }
 
 function hoverGradientBlack() {
-  
-  const hoverEffects = document.querySelectorAll('.hoverEffect');
-  
-  // const arr = []
+
+  let hoverEffects = document.querySelectorAll('.hoverEffect')
+  let color = 255;
   hoverEffects.forEach(hoverEffect => {
-    // let bckColor = e.hoverEffect.style.backgroundColor;
-    // console.log(bckColor);
-
+    
     hoverEffect.addEventListener('mouseover', function() {
-
-      let bckProp = window.getComputedStyle(hoverEffect);
-      let bckColor = bckProp.getPropertyValue('background-color');
-      console.log(bckColor);
-
-      // e.arr.push(hoverEffect);
-      
+      hoverEffect.style.backgroundColor = `rgb(${color}, ${color}, ${color})`;
+      color = color * 0.9;
     });
   });
 }
 
-//   function darkenColor(e) {
-//   hoverEffects.addEventListener('mouseover', function(e) {
-//      console.log(e)});
-//   //     e.hoverEffect.style.backgroundColor = `rgb(${color}, ${color}, ${color})`});
-//   //     color = color * 0.9;
 
-//   // });
-//   }
-// }
 
 function createDivs(gridSize) {
   while (gridSize > 0) {
