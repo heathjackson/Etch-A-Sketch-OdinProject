@@ -34,15 +34,19 @@ function hoverRandomColor() {
 
 function hoverGradientBlack() {
 
-  let hoverEffects = document.querySelectorAll('.hoverEffect')
-  let color = 255;
+  const hoverEffects = document.querySelectorAll('.hoverEffect')
+  
   hoverEffects.forEach(hoverEffect => {
-    
-    hoverEffect.addEventListener('mouseover', function() {
-      hoverEffect.style.backgroundColor = `rgb(${color}, ${color}, ${color})`;
-      color = color * 0.9;
+    const hvrEffect = hoverEffect;
+    hvrEffect.addEventListener('mouseover', (e) => {
+      e.target.style.backgroundColor = 'rgb(0, 0, 0';
     });
   });
+  //   hoverEffect.addEventListener('mouseover', function() {
+  //     hoverEffect.style.backgroundColor = `rgb(${color}, ${color}, ${color})`;
+  //     color = color * 0.9;
+  //   });
+  // });
 }
 
 
