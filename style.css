@@ -23,7 +23,7 @@ body {
 }
 
 .item {
-  background-color: aqua;
+  /* background-color: aqua; */
   border: solid 1px black;
 }
 
