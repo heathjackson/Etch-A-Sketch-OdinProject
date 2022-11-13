@@ -48,6 +48,7 @@ function hoverGradientBlack() {
         console.log(opac += 0.2);
         console.log(event.target.style.opacity = opac);
       }
+      //event.target.style.border = 'rgba(0, 0, 0, 1)';
     });
   });
 }
