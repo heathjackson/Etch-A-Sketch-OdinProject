@@ -19,8 +19,10 @@ h1 {
   display: grid;
   width: 560px;
   height: 560px;
-  border: solid 2px black;
-  grid-template-columns: repeat(2, 1fr);
+  padding: 1px;
+  /* grid-template-columns: repeat(2, 1fr); */
+  background-color: white;
+  border: solid 1px black;
 }
 
 .container {
@@ -30,7 +32,8 @@ h1 {
 }
 
 .item {
-  border: solid 1px black;
+  background-color: rgb(255, 255, 255);
+  margin: 1px;
 }
 
 .bottomButtons {
