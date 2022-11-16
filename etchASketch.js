@@ -3,27 +3,15 @@
 document.getElementById('btn').addEventListener('click', createGrid);
 document.getElementById('btn1').addEventListener('click', function() {
   document.getElementById('btn2').addEventListener('click', function() {
-    hoverRandomColor(0);
-    hoverGradientBlack(1);
-  });
-  hoverRandomColor(1);
-  hoverGradientBlack(0);
+    hoverGradientBlack();
+    });
+  hoverRandomColor();
 });
-document.getElementById('btn2').addEventListener('click', function() {
-  document.getElementById('btn1').addEventListener('click', function() {
-    hoverRandomColor(1);
-    hoverGradientBlack(0);});
-    
-  hoverRandomColor(0);
-  hoverGradientBlack(1);
-});
-
-// let cancelColor = 0;
-// let cancelBlack = 0;
+document.getElementById('btn2').addEventListener('click', hoverGradientBlack);
 
 function createGrid() {
   removeItems();
-  let length = prompt("how wide? ");
+  let length = prompt("How many squares wide would you like your etch-a-sketch?");
     if (length > 100) {
       return alert("Please choose a number less than or = 100.");
     }
@@ -35,19 +23,13 @@ function createGrid() {
     }
 }
 
-function hoverRandomColor(cancelColor) {
-  console.log(`cancel color = ${cancelColor}`);
+function hoverRandomColor() {
 
   const hoverEffects = document.querySelectorAll('.hoverEffect');
 
   hoverEffects.forEach(hoverEffect => {
     
-    
     hoverEffect.addEventListener('mouseover', function() {
-      if (cancelColor === 0) {
-        return;
-      }
-      cancelBlack = 0;
       color1 = Math.random() * 255;
       color2 = Math.random() * 255;
       color3 = Math.random() * 255;
@@ -58,24 +40,17 @@ function hoverRandomColor(cancelColor) {
 }
 
 
-function hoverGradientBlack(cancelBlack) {
-  console.log(`cancel black = ${cancelBlack}`);
+function hoverGradientBlack() {
 
   const hoverBlackEffects = document.querySelectorAll('.hoverBlackEffect')
  
 
   hoverBlackEffects.forEach(hoverBlackEffect => {
-   
-   
     let opac = 0.9;
     hoverBlackEffect.addEventListener('mouseover', (event) => {
-      if (cancelBlack === 0) {
-        return;
-      }
+
   
-      else if (event.target.style.opacity === "") {
-        cancelColor = 0;
-        console.log(`cancelBlack = ${cancelBlack}`);
+      if (event.target.style.opacity === "") {
         event.target.style.backgroundColor = 'rgb(255, 255, 255)';
         event.target.style.opacity = '0.9';
       }
@@ -85,7 +60,6 @@ function hoverGradientBlack(cancelBlack) {
       }
     });
   });
-  
 }
 
 function createDivs(gridSize) {
